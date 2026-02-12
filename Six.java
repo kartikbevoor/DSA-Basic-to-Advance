@@ -2,6 +2,7 @@
 // Reversing words in a sentence
 // Recursive string reversal
 
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -157,6 +158,76 @@ public class Six {
         }
 
         return ' ';
+    }
+
+    public static boolean anagramString(String str1, String str2){
+        if (str1.length() == 0 || str2.length() == 0) {
+            System.out.println("Empty string");
+            return false;
+        }
+        if (str1.length() != str2.length()) {
+            return false;
+        }
+
+        char[] x = str1.toLowerCase().toCharArray();
+        char[] y = str2.toLowerCase().toCharArray();
+        Arrays.sort(x);
+        Arrays.sort(y);
+
+        for (int i = 0; i < x.length; i++) {
+            if (x[i] != y[i]) {
+                return false;
+            }
+        }
+
+        // this can be used insted of the above for loop
+        // return Arrays.equals(x, y);
+
+        // to ignore spaces
+        // str1 = str1.replaceAll("\\s+", "");
+        // str2 = str2.replaceAll("\\s+", "");
+
+        return true;
+    }
+
+    // using sliding window pattern
+    public static boolean findSubstringInString(String str1, String str2) {
+
+        if (str2.length() > str1.length()) {
+            return false;
+        }
+
+        char[] x = str1.toLowerCase().toCharArray();
+        char[] y = str2.toLowerCase().toCharArray();
+
+        for (int i = 0; i <= x.length - y.length; i++) {
+
+            int j = 0;
+
+            while (j < y.length && x[i + j] == y[j]) {
+                j++;
+            }
+
+            if (j == y.length) {
+                return true; // full match found
+            }
+        }
+            return false; // no match found
+    }
+
+    // the other way
+    public static boolean contains(String str, String sub){
+        
+        for (int i = 0; i + sub.length()< str.length(); i++) {
+            int j = 0;
+            while (str.charAt(i + j) == sub.charAt(j) && j < sub.length()) {
+                j++;
+            }
+            if (j == sub.length()) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
