@@ -105,4 +105,30 @@ public class Two {
         return (reverse == temp1) ? true : false;
     }
 
+    public static boolean isPallindrome2(int n){
+        // convert number to char array
+        // char[] charArray = String.valueOf(number).toCharArray();
+        // char[] charArray = String.valueOf(number).toCharArray(); // this is for double or float
+        char[] charArray = Integer.toString(n).toCharArray();
+
+        int left = 0;
+        int right = charArray.length - 1;
+
+        while (left < right) {
+            if (charArray[left] == charArray[right]) {
+                left++;
+                right--;
+            }else{
+                return false;
+            }
+        }
+    
+        return true;
+    }
+
+    // Converting a number to string
+    // String str = String.valueOf(number);
+    // String str = Integer.toString(number);
+    // String str = Double.toString(d);
+
 }
