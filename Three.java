@@ -3,6 +3,24 @@ public class Three {
         
     }
 
+    public static boolean isArmstrong(int n){
+        int temp = n;
+        int armstrongNumber = 0;
+        int reminder;
+
+        while (n > 0) {
+            reminder = n % 10;
+            armstrongNumber = armstrongNumber + (reminder * reminder * reminder); // Math.pow(remainder, 3)
+            n = n / 10;
+        }
+
+        if (temp == armstrongNumber) {
+            return true;
+        }
+
+        return false;
+    }
+
     public static boolean isPrime(int n){   // check for prime nums
         for (int i = 2; i < n; i++) {
             if (n % i == 0) {
@@ -27,6 +45,19 @@ public class Three {
         for (int i = 1; i <= 10; i++) {
             System.out.println(n * i);
         }
+    }
+
+    public static int sumOfDigits(int n){
+        int sum = 0;
+        int reminder;
+
+        while (n > 0) {
+            reminder = n % 10;
+            sum = sum + reminder;
+            n = n / 10;
+        }
+
+        return sum;
     }
 
     public static void numPattern(int n){   // Printing num pattern(1, 12, 123)

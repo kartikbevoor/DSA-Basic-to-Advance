@@ -23,7 +23,7 @@ public class Four {
         return new int[]{smallest, largest};
     }
 
-    public static int[] reverseAnArray(int[] arr){   // Reverse an Array
+    public static int[] reverseAnArray(int[] arr){   // Reverse an Array: using two pointers
         int start = 0;
         int end = arr.length - 1;
 
@@ -37,6 +37,16 @@ public class Four {
         }
 
         return arr;
+    }
+
+    public static int[] reverseAnArray2(int[] arr){  // Reverse an array using for loop
+        int[] tempArr = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            tempArr[tempArr.length - 1 - i] = arr[i];
+        }
+
+        return tempArr;
     }
 
     public static Set<Integer> findDuplicate(int[] arr){  // Finding duplicate elements in an array
