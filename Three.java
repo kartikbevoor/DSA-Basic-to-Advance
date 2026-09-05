@@ -31,7 +31,7 @@ public class Three {
         return true;
     }
 
-    public static boolean isPrime2(int n){   // check for prime nums
+    public static boolean isPrime2(int n){   // check for prime nums bit optimised compared to above
         for (int i = 2; i * i <= n; i++) {
             if (n % i == 0) {
                 return false;
@@ -71,7 +71,7 @@ public class Three {
 
     public static void alphabetPattern(int n){   // printing alphabets pattern (a, ab, abc)
         for (int i = 1; i <= n; i++) {
-            for (char c = 'A'; c < 'A' + 1; c++) {
+            for (char c = 'A'; c < 'A' + i; c++) {
                 System.out.print(c);
             }
             System.out.println();

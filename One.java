@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class One{   // In java the file name and the name of the class, which contains main function has to be same
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);    // This is to take input from the user
         int a = sc.nextInt();
         int b = sc.nextInt();
 
-        System.out.println(a + b);
+        System.out.println(a + b);  // Sum of two numbers
 
         sc.close();
     }
@@ -53,4 +53,5 @@ public class One{   // In java the file name and the name of the class, which co
         }
         System.out.println(n > 0 ? "Positive" : "Negative");
     }
+
 }

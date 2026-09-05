@@ -9,7 +9,7 @@ public class Two {
         sc.close();
     }
 
-    // a leap year is the year which is either divisible by 0 or it is divisible by 4 and not by 4
+    // a leap year is the year which is either divisible by 400 or it is divisible by 4 and not by 100
     public static boolean isLeapyear(int year){  // check for leap year
         if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0 )) {
             return true;
@@ -35,7 +35,7 @@ public class Two {
 
         int fact = 1;
         for (int i = 2; i <= n; i++) {
-            fact = fact * 1;
+            fact = fact * i;
         }
 
         return fact;
