@@ -39,7 +39,7 @@ public class Four {
         return arr;
     }
 
-    public static int[] reverseAnArray2(int[] arr){  // Reverse an array using for loop
+    public static int[] reverseAnArray2(int[] arr){  // Reverse an array using for loop and temp array
         int[] tempArr = new int[arr.length];
 
         for (int i = 0; i < arr.length; i++) {

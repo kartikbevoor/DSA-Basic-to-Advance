@@ -32,13 +32,32 @@ public class Seven {
             this.h = h;
         }
 
+        Box(Box b){                // copy constructor
+            this.h = b.h;
+            this.l = b.l;
+            this.w = b.w;
+        }
+
         int area(){
             return l*w;
+        }
+
+        int area(int l, int b, int h){  // Method overloading
+            int area = 0;
+
+            area = 2 * (l * b + l * h + b * h);
+
+            return area;
         }
 
         int volume(){
             return l*w*h;
         }
+    }
+
+    public static class Box2 extends Box {
+        
+        
     }
     public static void main(String[] args) {
         Seven s = new Seven();
@@ -47,5 +66,15 @@ public class Seven {
         p.age = 23;
 
         p.greet();
+
+        Box b = new Box();  // here default constructor is used
+        System.out.println(b.area());
+
+        Box b1 = new Box(10, 10, 10);   // here parameterised constructor is used
+        System.out.println(b1.volume());
+
+        Box b2 = new Box(b1);   // here copy constructor is used
+        System.out.println(b2.area());
+        System.out.println(b2.area(b2.l, b2.w, b2.h));
     }
 }
