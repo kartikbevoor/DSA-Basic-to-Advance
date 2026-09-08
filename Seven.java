@@ -55,8 +55,58 @@ public class Seven {
         }
     }
 
-    public static class Box2 extends Box {
+    public static class Box2 extends Box {  // Inheritance using keyword extends
         
+        @Override int area(){   // here override tells java that this perticular method is overriding the method of the parent class
+            return super.area() + 1;    // here the super tells that call the method from the parent class
+        }
+    }
+
+    // INHERITANCE
+    public class A {
+        public void a(){
+            System.out.println("A");
+        }
+        
+    }
+
+    public class B extends A {  // single inheritance
+        public void b(){
+            System.out.println("B");
+        }
+        
+    }
+
+    public class C extends B {  // Multilevel inheritance
+        public void c(){
+            System.out.println("C");
+        }
+        
+    }
+
+    public class D extends A{   // Hierarchial inheritance
+        public void d(){
+            System.out.println("D");
+        }
+    }
+
+    // Abstract Class
+    public abstract class Shape {
+        public void area(){}
+        
+    } 
+
+    public class Triangle extends Shape {
+        int b;
+        int h;
+        Triangle(int b, int h){
+            this.b = b;
+            this.h = h;
+        }
+
+        public void area(){
+            System.out.println((b * h) / 2);
+        }
         
     }
     public static void main(String[] args) {
