@@ -104,6 +104,7 @@ public class Seven {
             this.h = h;
         }
 
+        @Override 
         public void area(){
             System.out.println((b * h) / 2);
         }
@@ -126,5 +127,8 @@ public class Seven {
         Box b2 = new Box(b1);   // here copy constructor is used
         System.out.println(b2.area());
         System.out.println(b2.area(b2.l, b2.w, b2.h));
+
+        Shape S = s.new Triangle(2, 3);
+        S.area();
     }
 }
