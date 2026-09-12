@@ -90,6 +90,8 @@ public class Seven {
         }
     }
 
+    // Note: multiple inheritance is invalid in java
+
     // Abstract Class
     public abstract class Shape {
         public void area(){}
